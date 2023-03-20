@@ -1,0 +1,122 @@
+:root {
+  --default-pad-mar: 30px;
+  --default-input-pad: 5px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 50px;
+}
+
+header div {
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: static;
+  box-shadow: 1px 1px 12px 4px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 1px 12px 4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 12px 4px rgba(0, 0, 0, 0.75);
+  animation: droping-header 1s;
+}
+
+header h1 {
+  font-size: 20px;
+}
+
+main {
+}
+
+main h2 {
+  margin-top: var(--default-pad-mar);
+  font-weight: 400;
+  animation: main-from-left 1.5s ease-in-out;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: static;
+}
+
+.forms .topic-form-visible,
+.forms .elem-form-visible {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  animation: main-from-right 2s ease-in-out;
+}
+
+.forms input {
+  padding-left: var(--default-input-pad);
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.forms button {
+  border: none;
+}
+
+.forms .elem-form-hidden {
+  display: none;
+}
+
+@keyframes droping-header {
+  from {
+    box-shadow: none;
+    position: absolute;
+    width: auto;
+    top: -100px;
+    left: 0;
+    right: 0;
+    border: none;
+  }
+  to {
+    position: absolute;
+    width: auto;
+    box-shadow: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    border: none;
+  }
+}
+
+@keyframes main-from-left {
+  from {
+    position: absolute;
+    left: -800px;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+  }
+
+  to {
+    position: absolute;
+    left: 0;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+  }
+}
+
+@keyframes main-from-right {
+  from {
+    position: absolute;
+    right: -800px;
+    top: 130px;
+  }
+
+  to {
+    position: absolute;
+    right: 0;
+    top: 130px;
+  }
+}
