@@ -18,7 +18,7 @@ header {
   box-shadow: 1px 1px 12px 4px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 1px 1px 12px 4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 1px 12px 4px rgba(0, 0, 0, 0.75);
-  animation: dropping-header 1s;
+  animation: dropping 1s;
 }
 
 header h1 {
@@ -31,7 +31,7 @@ main {
 main h2 {
   margin-top: var(--default-pad-mar);
   font-weight: 400;
-  animation: main-from-left 1.5s ease-in-out;
+  animation: from-left 1.5s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,7 +43,7 @@ main h2 {
   display: flex;
   justify-content: center;
   gap: 10px;
-  animation: main-from-right 1.5s ease-in-out;
+  animation: from-right 1.5s ease-in-out;
 }
 
 .forms input {
@@ -60,7 +60,7 @@ main h2 {
   display: none;
 }
 
-@keyframes dropping-header {
+@keyframes dropping {
   from {
     transform: translateY(-100px);
   }
@@ -69,7 +69,7 @@ main h2 {
   }
 }
 
-@keyframes main-from-left {
+@keyframes from-left {
   from {
     transform: translateX(-300px);
   }
@@ -78,7 +78,7 @@ main h2 {
   }
 }
 
-@keyframes main-from-right {
+@keyframes from-right {
   from {
     transform: translateX(200px);
   }
