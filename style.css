@@ -38,26 +38,62 @@ main h2 {
   position: static;
 }
 
-.forms .topic-form-visible,
-.forms .elem-form-visible {
+.forms-container > div.visible {
   display: flex;
   justify-content: center;
   gap: 10px;
   animation: from-right 1.5s ease-in-out;
 }
 
-.forms input {
+.forms-container > div.hidden {
+  display: none;
+}
+
+.forms-container input {
   padding-left: var(--default-input-pad);
   border: none;
   border-bottom: 1px solid gray;
 }
 
-.forms button {
+.forms-container button {
   border: none;
 }
 
-.forms .elem-form-hidden {
-  display: none;
+.elems-container {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.elems-container .elem {
+  animation: jump 1s infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.elems-container p {
+  width: 90px;
+  text-align: center;
+  font-size: larger;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.elems-container button {
+  border: none;
+  background-color: none;
+  color: red;
+  margin-bottom: 10px;
 }
 
 @keyframes dropping {
@@ -84,5 +120,19 @@ main h2 {
   }
   to {
     transform: translateX(0);
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  to {
+    transform: translateY(0);
   }
 }
