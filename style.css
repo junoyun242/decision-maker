@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Alkatra&display=swap");
+
 :root {
   --default-pad-mar: 30px;
   --default-input-pad: 5px;
@@ -6,6 +8,8 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  font-family: "Alkatra", cursive;
 }
 
 header {
@@ -57,6 +61,8 @@ main h2 {
 
 .forms-container button {
   border: none;
+  background-color: #6262e5;
+  color: white;
 }
 
 .elems-container {
@@ -67,17 +73,21 @@ main h2 {
 }
 
 .elems-container .elem {
-  animation: jump 1s infinite;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   margin-left: 10px;
   margin-right: 10px;
+  margin-top: 10px;
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.elems-container .valid-elem.selected {
+  animation: jump 1s infinite;
 }
 
 .elems-container p {
@@ -94,6 +104,34 @@ main h2 {
   background-color: none;
   color: red;
   margin-bottom: 10px;
+}
+
+.discarded {
+  animation: discarded 2s forwards;
+}
+
+.decision-btn-container {
+  display: none;
+  justify-content: center;
+  width: 100%;
+  margin-top: var(--default-pad-mar);
+  padding-bottom: var(--default-pad-mar);
+}
+
+.decision-btn-container button {
+  border: none;
+  background: #6262e5;
+  color: white;
+  width: 50%;
+  height: 50px;
+  font-size: large;
+  border-radius: 50px;
+}
+
+.result-container p {
+  font-size: x-large;
+  text-align: center;
+  color: #b55fe8;
 }
 
 @keyframes dropping {
@@ -134,5 +172,14 @@ main h2 {
 
   to {
     transform: translateY(0);
+  }
+}
+
+@keyframes discarded {
+  from {
+    transform: translate3d(-100px, -100px) rotate(2.5turn);
+  }
+  to {
+    transform: translate(-1000px, -200px) rotate(5.5turn);
   }
 }
